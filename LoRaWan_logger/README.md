@@ -11,11 +11,11 @@ The architecture of the system is composed of different blocks :
 
 <img src="images/loraWan.jpg" width="960"/>
 
-# Arduino-based datalogger
+## Arduino-based datalogger
 
-# LoRaWan gateway
+## LoRaWan gateway
 
-# Server
+## Server
 
 
 
