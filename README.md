@@ -22,8 +22,8 @@ We have tested and used three different development boards which are summarized 
 ### Seeeduino Stalker v3.1
 
 
-| 
+<div> 
 <a href="https://wiki.seeedstudio.com/Seeeduino_Stalker_V3.1/">The Seeeduino Stalker v3.1</a> board contains all necessary features to build a simple local autonomious datalogger. It has a relatively low internal memory (Atmega328P) so that it should be used for small applications with only one or two sensors. It is the cheapest option but shows sometimes small bugs, although it is overall very satisfying. It is imported from the US and may be subject to supply limitation. You will need a <a href="https://wiki.seeedstudio.com/UartSBee_v5/">USB-UART converter</a> to communicate with the board.
-| 
+</div>
 <img src="images/seeeduino.jpg" width="200">
-| 
+
