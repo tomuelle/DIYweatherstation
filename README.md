@@ -1,4 +1,4 @@
-# DIY weather station
+# DIY automatic monitoring station
 
 This page provides different low-cost arduino based automatic datalogger solutions developed in the framework of my PhD work in a remote high alpine environment.
 It contains all necessary information for the replication of such solutions and should be accessible for non-expert users. The solutions proposed here are based on my own experience and I stress that I had no prior training in sensor development nor electronics.
