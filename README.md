@@ -33,7 +33,17 @@ A description of a simple water table monitoring project is available in the <a 
 <p align="justify">
 <a href="https://support.sodaq.com/Boards/Mbili/">The SODAQ Mbili</a> board is quite similar but has a larger memory (ATmega 1284P), has some more flexible hardware settings and comes with plug-in grove sockets. It is a bit more expensive and is imported from the Netherland (Europe). SODAQ also proposes a bee-socket where a <a href="https://shop.sodaq.com/lorabee-rn2483-order-now.html">LoRa bee-module</a> can be added in order to send data remotely. 
 A quick note of caution : jumper SJ8 should be soldered to use external RTC interrupt.
+  
+A description of a simple water table monitoring project is available in the <a href="/standalone_logger">standalone_logger folder</a>.
 </p>
 <br>
 
-### SODAQ Mbili
+### CubeCell Lora Dev-Board
+<img align="right" src="images/cubecell.jpg" width="200"/>
+<p align="justify">
+<a href="https://heltec.org/product/htcc-ab01/">The CubeCell Lora</a> Dev-Board
+  
+A description of a simple water table monitoring project is available in the <a href="/LoRaWan_logger">LoRaWan_logger folder</a>.
+</p>
+<br>
+
