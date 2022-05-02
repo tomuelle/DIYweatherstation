@@ -19,15 +19,21 @@ The main features of these boards are :
 
 We have tested and used three different development boards which are summarized hereafter.
 
-<img align="right" src="images/seeeduino.jpg" width="200"/>
 ### Seeeduino Stalker v3.1
+<img align="right" src="images/seeeduino.jpg" width="200"/>
 <p align="justify">
 <a href="https://wiki.seeedstudio.com/Seeeduino_Stalker_V3.1/">The Seeeduino Stalker v3.1</a> board contains all necessary features to build a simple local autonomious datalogger. It has a relatively low internal memory (Atmega328P) so that it should be used for small applications with only one or two sensors. It is the cheapest option but shows sometimes small bugs, although it is overall very satisfying. It is imported from the US and may be subject to supply limitation. You will need a <a href="https://wiki.seeedstudio.com/UartSBee_v5/">USB-UART converter</a> to communicate with the board.
+  
+A description of a simple water table monitoring project is available in the <a href="/standalone_logger">standalone_logger folder</a>.
 </p>
 <br>
 
-<img align="right" src="images/sodaq.jpg" width="200"/>
 ### SODAQ Mbili
+<img align="right" src="images/sodaq.jpg" width="200"/>
 <p align="justify">
-<a href="https://support.sodaq.com/Boards/Mbili/">The SODAQ Mbili</a> board is quite similar but has a larger memory (ATmega 1284P), has some more flexible hardware settings and comes with plug-in grove sockets. It is a bit more expensive and is imported from the Netherland (Europe). A quick note of caution : jumper SJ8 should be soldered to use external RTC interrupt.
+<a href="https://support.sodaq.com/Boards/Mbili/">The SODAQ Mbili</a> board is quite similar but has a larger memory (ATmega 1284P), has some more flexible hardware settings and comes with plug-in grove sockets. It is a bit more expensive and is imported from the Netherland (Europe). SODAQ also proposes a bee-socket where a <a href="https://shop.sodaq.com/lorabee-rn2483-order-now.html">LoRa bee-module</a> can be added in order to send data remotely. 
+A quick note of caution : jumper SJ8 should be soldered to use external RTC interrupt.
 </p>
+<br>
+
+### SODAQ Mbili
