@@ -9,9 +9,10 @@ The main features of these boards are :
   <li>The basic functions of an adruino boards (Microcontroller, digital, analog and I2C pins); </li>
   <li>A low-power consumption; </li>
   <li>A real-time clock (RTC) clock to record time and to allow an RTC external interrupts to wake up the board from deep sleep;</li>
-  <li>A build-in connector for a 3.7V LiPo battery;</li>
-  <li>A build-in connector for a 5V solar pannel with a charge controller;</li>
-  <li>A build-in LoRa module or a socket to add a LoRa module with antenna;</li>
+  <li>A 
+    -in connector for a 3.7V LiPo battery;</li>
+  <li>A built-in connector for a 5V solar pannel with a charge controller;</li>
+  <li>A built-in LoRa module or a socket to add a LoRa module with antenna;</li>
   <li>A SD Card holder to save data locally.</li>
 </ul>  
 
@@ -41,9 +42,9 @@ A description of a simple water table monitoring project is available in the <a 
 ### CubeCell Lora Dev-Board
 <img align="right" src="images/cubecell.jpg" width="200"/>
 <p align="justify">
-<a href="https://heltec.org/product/htcc-ab01/">The CubeCell Lora</a> Dev-Board
-  
-A description of a simple water table monitoring project is available in the <a href="/LoRaWan_logger">LoRaWan_logger folder</a>.
+<a href="https://heltec.org/product/htcc-ab01/">The CubeCell Lora</a> Dev-Board is a low-cost, low-power board specifically designed for LoRaWAN applications. This board does not have any SD card holder nor RTC clock and data are only sent using the built-in LoRa module. The data can only be retrieved using a LoRa gateway and are not saved on the device.
+
+For this LoRaWAN application, we developped a completely autonomous, solar-based, local wireless network for regions without internet (4G) connection which allows to retrieve data from mutliple LoRa stations. A similar solution using 4G is also shown. Details are accessible in the <a href="/LoRaWan_logger">LoRaWan_logger folder</a>.
 </p>
 <br>
 
