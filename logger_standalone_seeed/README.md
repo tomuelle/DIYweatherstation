@@ -1,3 +1,9 @@
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+
 # Stand-alone Logger (Seeeduino stalker v3.1)
 An automatic stand-alone datalogger to record and save data locally on an SD card.
 
@@ -14,10 +20,22 @@ Links below are examples of hardware providers for Switzerland in 2022.
   <li><a href="https://wiki.seeedstudio.com/UartSBee_v5/">USB-UART converter</a> to communicate with the board
   <li>The sensor you want to plug in. In our case a water pressure sensor, <a href="sensor_waterpressure/">see other post here</a>
 </ul>
+<br>
+
+<div align="center">
+  <table>
+      <tr>
+          <td><img src="images/seeeduino_station.jpg" width="400" /> </td>
+          <td style="text-align:center"><em>The equiped seeeduino board enclosed in a simple watertight lunch box for testing. The solar pannel can be left inside the box if the plastic is transparent. </em></td>
+      </tr>
+  </table>
+</div>
 
 ## Configuration
 
 Firstly you will need to install the arduino IDE and configure it to work with Seeeduino stalker. All steps are described in <a href="https://wiki.seeedstudio.com/Seeeduino_Stalker_V3.1/">this tutorial</a>. Don't miss <a href="https://wiki.seeedstudio.com/Seeed_Arduino_Boards/">the actual configuration (step 4)</a>. Once everything is set-up, try to run the blink example to make sure everything works !
+
+Then download the <a href="scripts">arduino code</a>
 
 
 
