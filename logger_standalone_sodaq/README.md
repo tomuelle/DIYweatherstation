@@ -19,5 +19,6 @@ Links below are examples of hardware providers for Switzerland in 2022.
 
 Firstly you will need to install the arduino IDE and configure it to work with Seeeduino stalker. All steps are described in <a href="https://wiki.seeedstudio.com/Seeeduino_Stalker_V3.1/">this tutorial</a>. Don't miss <a href="https://wiki.seeedstudio.com/Seeed_Arduino_Boards/">the actual configuration (step 4)</a>. Once everything is set-up, try to run the blink example to make sure everything works !
 
+A quick note of caution : jumper SJ8 should be soldered to use external RTC interrupt.
 
 
