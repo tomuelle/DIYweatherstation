@@ -26,13 +26,14 @@ Links below are examples of hardware providers for Switzerland in 2022.
 
 ## Configuration
 
-Firstly you will need to install the arduino IDE and configure it to work with Seeeduino stalker. All steps are described in <a href="https://wiki.seeedstudio.com/Seeeduino_Stalker_V3.1/">this tutorial</a>. Don't miss <a href="https://wiki.seeedstudio.com/Seeed_Arduino_Boards/">the actual configuration (step 4)</a>. The main steps are : 
+Firstly you will need to install the <a href="https://www.arduino.cc/en/software/">arduino IDE</a> and configure it to work with Seeeduino stalker. All steps are described in <a href="https://wiki.seeedstudio.com/Seeeduino_Stalker_V3.1/">this tutorial</a>. Don't miss <a href="https://wiki.seeedstudio.com/Seeed_Arduino_Boards/">the actual configuration (step 4)</a>. The main steps are : 
 <ul>
   <li> Open your Arudino IDE, click on File -> Preferences, and copy below url to Additional Boards Manager URLs : https://raw.githubusercontent.com/Seeed-Studio/Seeed_Platform/master/package_legacy_seeeduino_boards_index.json
   <li> Then in "Tools -> Board -> Board Manager", look for "Seeeduino Stalker" and install Seeeduino Stalker V3
   <li> Go back in "Tools -> Board" make sure to select "Seeeduino Stalker V3
 </ul>
 Once everything is set-up, try to run the blink example to make sure everything works !
+<br>
 <br>
 Then download the <a href="scripts">arduino code</a>. You may need to download a few arduino libraries in the library manager (in Arduino IDE : Sketch -> Include Library -> Manage Library or Add .ZIP library), depending on the sensors you are connecting. In our example, we only need to search and download the "SparkFun_MS5803_I2C.h" library.
 
