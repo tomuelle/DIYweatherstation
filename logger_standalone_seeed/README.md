@@ -33,9 +33,8 @@ Firstly you will need to install the arduino IDE and configure it to work with S
   <li> Go back in "Tools -> Board" make sure to select "Seeeduino Stalker V3
 </ul>
 Once everything is set-up, try to run the blink example to make sure everything works !
-
+<br>
 Then download the <a href="scripts">arduino code</a>. You may need to download a few arduino libraries in the library manager (in Arduino IDE : Sketch -> Include Library -> Manage Library or Add .ZIP library), depending on the sensors you are connecting. In our example, we only need to search and download the "SparkFun_MS5803_I2C.h" library.
-
 
 
 
