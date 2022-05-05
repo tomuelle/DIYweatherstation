@@ -39,18 +39,4 @@ Once everything is set-up, try to run the blink example to make sure everything 
 <br>
 <br>
 Then download the <a href="scripts">arduino code</a>. You may need to download a few arduino libraries in the library manager (in Arduino IDE : Sketch -> Include Library -> Manage Library or Add .ZIP library), depending on the sensors you are connecting. In our example, we only need to search and download the "SparkFun_MS5803_I2C.h" library.
-<br>
-<br>
-<div align="center">
-  <table>
-      <tr>
-          <td><img src="images/station_glacier.jpg" width="600" /> </td>
-      </tr>
-      <tr>
-          <td style="text-align:center"><em>First version of the datalogger working in the glacier forefield of the Otemma catchment.</em></td>
-      </tr>
-  </table>
-</div>
-
-
 
