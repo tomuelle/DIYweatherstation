@@ -19,7 +19,7 @@ Links below are examples of hardware providers for Switzerland in 2022.
   <table>
       <tr>
           <td><img src="images/seeeduino_station.jpg" width="400" /> </td>
-          <td style="text-align:center"><em>The equiped seeeduino board enclosed in a simple watertight lunch box for testing. The solar pannel can be left inside the box if the plastic is transparent. </em></td>
+          <td style="text-align:center"><em>The equipped seeeduino board enclosed in a simple watertight lunch box for testing. The solar pannel can be left inside the box if the plastic is transparent. </em></td>
       </tr>
   </table>
 </div>
