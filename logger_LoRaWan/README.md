@@ -56,7 +56,35 @@ Then download the <a href="scripts">arduino code</a>. You may need to download a
 
 ## LoRaWan gateway
 
+To come...
+
+Dragino gateway (https://www.dragino.com/products/lora-lorawan-gateway/item/160-dlos8.html)
+
+Account on TheThingsNetwork : https://eu1.cloud.thethings.network/console/
+Add end-device -> Copy keys
+Create payload decoder
+Create MQTT connection
+
 ## Server
 
+To come...
+
+Create a server on Rapsberry pi !
+You will need to following functions :
+ <ol>
+  <li>(create hotspot)</li>
+  <li>Apache</li>
+  <li>PHP</li>
+  <li>public IP address</li>
+</ol> 
+
+https://nwmichl.net/2020/07/14/telegraf-influxdb-grafana-on-raspberrypi-from-scratch/
+You will need to following functions :
+ <ol>
+  <li>Mosquitto (MQTT)</li>
+  <li>influxDB</li>
+  <li>Telegraf</li>
+  <li>Grafana</li>
+</ol> 
 
 
