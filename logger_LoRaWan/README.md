@@ -4,9 +4,9 @@ This tutorial will describe the main procedure to develop an automatic connected
 
 The architecture of the system is composed of different blocks :
  <ol>
-  <li>The actual arduino-based datalogger with LoRa antenna ;</li>
-  <li>A LoRaWan gateway to receive any LoRa RF signal and transmit it ;</li>
-  <li>A server to communicate with the LoRaWan gateway to store data and provide queries for vizualisation ;</li>
+  <li>The actual arduino-based datalogger with LoRa antenna. It reads data and send them via LoRa RF;</li>
+  <li>A LoRaWAN gateway to receive any LoRa RF signal. It translate the data and send it via 4G or ethernet to a remote server (hosted on the web or your own connected Raspberry Pi). Alternatively, if no internet is available, a local WIFI network (without internet) can be set-up and the data can be pushed to a local server (Raspberry Pi) ;</li>
+  <li>A server to communicate with the LoRaWAN gateway to store the data and provide queries for vizualisation (hosted on the web or your own connected Raspberry Pi).</li>
 </ol> 
 
 <img src="images/loraWan.jpg" width="960"/>
@@ -45,6 +45,13 @@ For the CubeCell Lora Dev-Board:
       </tr>
   </table>
 </div>
+
+## Configuration
+
+Firstly you will need to install the <a href="https://www.arduino.cc/en/software/">arduino IDE</a> and configure it to work with your board. For the Mbili you can check <a href="logger_standalone_sodaq#configuration">this page</a>. For the CubeCell board, follow <a href="https://heltec-automation-docs.readthedocs.io/en/latest/cubecell/quick_start.html/">this tutorial</a>
+<br>
+<br>
+Then download the <a href="scripts">arduino code</a>. You may need to download a few arduino libraries in the library manager (in Arduino IDE : Sketch -> Include Library -> Manage Library or Add .ZIP library), depending on the sensors you are connecting.
 
 ## LoRaWan gateway
 
