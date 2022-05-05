@@ -17,8 +17,7 @@ The main features of these boards are :
   <li>The basic functions of an adruino boards (Microcontroller, digital, analog and I2C pins); </li>
   <li>A low-power consumption; </li>
   <li>A real-time clock (RTC) clock to record time and to allow an RTC external interrupts to wake up the board from deep sleep;</li>
-  <li>A 
-    -in connector for a 3.7V LiPo battery;</li>
+  <li>A built-in connector for a 3.7V LiPo battery;</li>
   <li>A built-in connector for a 5V solar pannel with a charge controller;</li>
   <li>A built-in LoRa module or a socket to add a LoRa module with antenna;</li>
   <li>A SD Card holder to save data locally.</li>
