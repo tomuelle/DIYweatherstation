@@ -42,7 +42,7 @@ For the CubeCell Lora Dev-Board:
   <table>
       <tr>
           <td><img src="images/station_glacier.jpg" width="2000" /> </td>
-          <td style="text-align:center"><em>The first version of the datalogger equipped with the Mbili board enclosed in a simple watertight lunch box for testing. It is connected to a water pressure sensor inserted in a screened piezometer and an air temperature/humiditiy/pressure protected by a simple radiation shield. The solar pannel can be left inside the box if the plastic is transparent. The station was installed in the glacier forefield of the Otemma catchment</em></td>
+          <td style="text-align:center"><em>Ephemeral weather station equipped with a CubeCell board enclosed in a simple watertight lunch box. Data are directly sent to a base station (LoRaWAN gateway), located ~5 km below the glacier. It is connected to a rain gauge and an air temperature/humiditiy/pressure protected by a simple radiation shield. The solar pannel can be left inside the box if the plastic is transparent. The station was installed on the Otemma glacier.</em></td>
       </tr>
   </table>
 </div>
