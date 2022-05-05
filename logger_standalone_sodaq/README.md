@@ -1,5 +1,7 @@
 # Stand-alone Logger (SODAQ Mbili)
-This page describes the set-up of an automatic stand-alone datalogger to record and save data locally on an SD card using the SODAQ Mbili board. This page is similar to the <a href="../logger_standalone_seed">Seeeduino tutorial</a>, but using a different board.
+This page describes the set-up of an automatic stand-alone datalogger to record and save data locally on an SD card using the SODAQ Mbili board. This page is similar to the <a href="../logger_standalone_seed">Seeeduino tutorial</a>, but using a different board. 
+
+For this example, we will connect both a <a href="../sensor_waterpressure">water pressure sensor</a> and an <a href="../sensor_temperature">air temperature/humidity/pressure sensor</a>.
 
 ## Hardware required
 Links below are examples of hardware providers for Switzerland in 2022.
@@ -20,7 +22,7 @@ Links below are examples of hardware providers for Switzerland in 2022.
   <table>
       <tr>
           <td><img src="images/logger_mbili.jpg" width="1000" /> </td>
-          <td style="text-align:center"><em>The first version of the datalogger equipped with the Mbili board enclosed in a simple watertight lunch box for testing. The solar pannel can be left inside the box if the plastic is transparent. The station was installed in the glacier forefield of the Otemma catchment</em></td>
+          <td style="text-align:center"><em>The first version of the datalogger equipped with the Mbili board enclosed in a simple watertight lunch box for testing. It is connected to a water pressure sensor inserted in a screened piezometer and an air temperature/humiditiy/pressure protected by a simple radiation shield. The solar pannel can be left inside the box if the plastic is transparent. The station was installed in the glacier forefield of the Otemma catchment</em></td>
       </tr>
   </table>
 </div>
@@ -39,5 +41,4 @@ Firstly you will need to install the <a href="https://www.arduino.cc/en/software
 Once everything is set-up, try to run the blink example to make sure everything works !
 <br>
 <br>
-Then download the <a href="scripts">arduino code</a>. You may need to download a few arduino libraries in the library manager (in Arduino IDE : Sketch -> Include Library -> Manage Library or Add .ZIP library), depending on the sensors you are connecting. In our example, we only need to search and download the "SparkFun_MS5803_I2C.h" library.
-
+Then download the <a href="scripts">arduino code</a>. You may need to download a few arduino libraries in the library manager (in Arduino IDE : Sketch -> Include Library -> Manage Library or Add .ZIP library), depending on the sensors you are connecting.
