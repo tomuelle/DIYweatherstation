@@ -1,4 +1,12 @@
 # DIY automatic monitoring station
+## Contact and credit
+This tutorial was designed by Tom Müller, in the framework of a PhD thesis at the University of Lausanne (Switzerland) and was co-supervised by Bettina Schaefli (University of Bern, Switzerland) and Stuart Lane (University of Lausanne, Switzerland).
+
+The codes are Open-Source. For scientific reference, please use the following link : https://doi.org/10.5194/egusphere-egu22-940
+
+For any questions, please write to tom.muller1@gmail.com
+
+## Description
 
 This page provides different low-cost arduino based automatic datalogger solutions developed in the framework of my PhD work in a remote high alpine environment.
 It contains all necessary information for the replication of such solutions and should be accessible for non-expert users. The solutions proposed here are based on my own experience and I stress that I had no prior training in sensor development nor electronics.
@@ -44,11 +52,3 @@ A description of a simple water table monitoring project is available in the <a 
 
 For this LoRaWAN application, we developped a completely autonomous, solar-based, local wireless network for regions without internet (4G) connection which allows to retrieve data from mutliple LoRa stations. A similar solution using 4G is also shown. Details are accessible in the <a href="/LoRaWan_logger">LoRaWan_logger folder</a>.
 </p>
-<br>
-
-### Contact and credit
-This tutorial was designed by Tom Müller, in the framework of a PhD thesis at the University of Lausanne (Switzerland) and was co-supervised by Bettina Schaefli (University of Bern, Switzerland) and Stuart Lane (University of Lausanne, Switzerland).
-
-The codes are Open-Source. For scientific reference, please use the following link : https://doi.org/10.5194/egusphere-egu22-940
-
-For any questions, please write to tom.muller1@gmail.com
