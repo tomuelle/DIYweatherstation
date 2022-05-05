@@ -46,3 +46,9 @@ For this LoRaWAN application, we developped a completely autonomous, solar-based
 </p>
 <br>
 
+### Contact and credit
+This tutorial was designed by Tom Müller, in the framework of a PhD thesis at the University of Lausanne (Switzerland) and was co-supervised by Bettina Schaefli (University of Bern, Switzerland) and Stuart Lane (University of Lausanne, Switzerland).
+
+The codes are Open-Source. For scientific reference, please use the following link : https://doi.org/10.5194/egusphere-egu22-940
+
+For any questions, please write to tom.muller1@gmail.com
