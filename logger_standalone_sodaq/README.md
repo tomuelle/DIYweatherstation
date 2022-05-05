@@ -18,8 +18,8 @@ Links below are examples of hardware providers for Switzerland in 2022.
 <div align="center">
   <table>
       <tr>
-          <td><img src="images/seeeduino_station.jpg" width="400" /> </td>
-          <td style="text-align:center"><em>The equiped seeeduino board enclosed in a simple watertight lunch box for testing. The solar pannel can be left inside the box if the plastic is transparent. </em></td>
+          <td><img src="images/logger_mbili.jpg" width="500" /> </td>
+          <td style="text-align:center"><em>The first version of the datalogger equipped with the Mbili board enclosed in a simple watertight lunch box for testing. The solar pannel can be left inside the box if the plastic is transparent. The station was installed in the glacier forefield of the Otemma catchment</em></td>
       </tr>
   </table>
 </div>
