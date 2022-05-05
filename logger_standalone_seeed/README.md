@@ -1,5 +1,5 @@
 # Stand-alone Logger (Seeeduino stalker v3.1)
-This page describes the set-up of an automatic stand-alone datalogger to record and save data from a waterproof pressure sensors locally on an SD card.
+This page describes the set-up of an automatic stand-alone datalogger to record and save data from a waterproof pressure sensors locally on an SD card. You can also check the similar set-up, but using <a href="https://www.bastelgarage.ch/110x80x70mm-ip67-kunststoffgehause-transparent/">SODAQ mbili board</a>.
 
 ## Hardware required
 Links below are examples of hardware providers for Switzerland in 2022.
