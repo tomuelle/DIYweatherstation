@@ -27,6 +27,7 @@ Links below are examples of hardware providers for Switzerland in 2022.
 For the SODAQ Mbili: 
 <ul>
   <li><a href="https://shop.sodaq.com/sodaq-mbili.html">SODAQ Mbili</a>
+  <li><a href="https://shop.sodaq.com/lorabee-rn2483-order-now.html">LoRa bee-module</a>
   <li>A cheap 4 GB SD card (or even smaller, you'll only need a few MB...)
   <li>Any USB-mini (B) cable for communication
 </ul>
