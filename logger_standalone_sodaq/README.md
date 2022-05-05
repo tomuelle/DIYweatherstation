@@ -13,7 +13,7 @@ Links below are examples of hardware providers for Switzerland in 2022.
   <li>A cheap 4 GB SD card (or even smaller, you'll only need a few MB...)
   <li><a href="https://shop.sodaq.com/sodaq-mbili.html">The arduino-based board : SODAQ Mbili</a>
   <li>Any USB MINI cable for communication
-  <li>The sensor you want to plug in. In our case, a water pressure sensor, (<a href="sensor_waterpressure/">see post here</a>) and an air temperature/humiditiy/pressure protected by a simple radiation shield (<a href="sensor_temperature/">see post here</a>).
+  <li>The sensor you want to plug in. In our case, a water pressure sensor, (<a href="sensor_waterpressure/">see post here</a>) and an air temperature/humidity/pressure protected by a simple radiation shield (<a href="sensor_temperature/">see post here</a>).
 </ul>
 
 <br>
@@ -22,7 +22,7 @@ Links below are examples of hardware providers for Switzerland in 2022.
   <table>
       <tr>
           <td><img src="images/logger_mbili.jpg" width="2000" /> </td>
-          <td style="text-align:center"><em>The first version of the datalogger equipped with the Mbili board enclosed in a simple watertight lunch box for testing. It is connected to a water pressure sensor inserted in a screened piezometer and an air temperature/humiditiy/pressure protected by a simple radiation shield. The solar pannel can be left inside the box if the plastic is transparent. The station was installed in the glacier forefield of the Otemma catchment</em></td>
+          <td style="text-align:center"><em>The first version of the datalogger equipped with the Mbili board enclosed in a simple watertight lunch box for testing. It is connected to a water pressure sensor inserted in a screened piezometer and an air temperature/humidity/pressure protected by a simple radiation shield. The solar pannel can be left inside the box if the plastic is transparent. The station was installed in the glacier forefield of the Otemma catchment</em></td>
       </tr>
   </table>
 </div>
