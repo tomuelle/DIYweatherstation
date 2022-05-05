@@ -10,6 +10,7 @@ Links below are examples of hardware providers for Switzerland in 2022.
   <li><a href="https://shop.sodaq.com/05w-solar-panel.html">0.5W Solar Panel 55x70mm (with 2 mm JST connector)</a>  
   <li>A cheap 4 GB SD card (or even smaller, you'll only need a few MB...)
   <li><a href="https://shop.sodaq.com/sodaq-mbili.html">The arduino-based board : SODAQ Mbili</a>
+  <li>Any USB MINI cable for communication
   <li>The sensor you want to plug in. In our case, a water pressure sensor, <a href="sensor_waterpressure/">see other post here</a>
 </ul>
 
