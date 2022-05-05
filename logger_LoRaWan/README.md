@@ -1,4 +1,4 @@
-# LoRaWan automatic datalogger 
+# LoRaWAN automatic datalogger 
 
 This tutorial will describe the main procedure to develop an automatic connected datalogger to record and send data using the low-power LoRaWan network. The design was tested to record data from an ephemeral weather station on the surface of a glacier in the Swiss Alps. Data collected were air temperature, humidity and pressure as well as precipitation. In this first case, to 4G network was available so that a local LoRa network was developped to receive and store the data to a base station about 5 km below the glacier. A second set-up was installed near the city of Lausanne (Switzerland) were 4G network was available so that data were then transmited online to a remote server.
 
@@ -40,7 +40,7 @@ For the CubeCell Lora Dev-Board:
 <div align="center">
   <table>
       <tr>
-          <td><img src="images/logger_mbili.jpg" width="2000" /> </td>
+          <td><img src="images/station_glacier.jpg" width="2000" /> </td>
           <td style="text-align:center"><em>The first version of the datalogger equipped with the Mbili board enclosed in a simple watertight lunch box for testing. It is connected to a water pressure sensor inserted in a screened piezometer and an air temperature/humiditiy/pressure protected by a simple radiation shield. The solar pannel can be left inside the box if the plastic is transparent. The station was installed in the glacier forefield of the Otemma catchment</em></td>
       </tr>
   </table>
