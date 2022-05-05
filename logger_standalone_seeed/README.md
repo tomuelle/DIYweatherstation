@@ -1,5 +1,5 @@
 # Stand-alone Logger (Seeeduino stalker v3.1)
-This page describes the set-up of an automatic stand-alone datalogger to record and save data from a waterproof pressure sensors locally on an SD card.
+This page describes the set-up of an automatic stand-alone datalogger to record and save data from a waterproof pressure sensors locally on an SD card. You can also check the similar set-up, but using <a href="https://www.bastelgarage.ch/110x80x70mm-ip67-kunststoffgehause-transparent/">SODAQ mbili board</a>.
 
 ## Hardware required
 Links below are examples of hardware providers for Switzerland in 2022.
@@ -11,7 +11,7 @@ Links below are examples of hardware providers for Switzerland in 2022.
   <li>A cheap 4 GB SD card (or even smaller, you'll only need a few MB...)
   <li><a href="https://www.seeedstudio.com/Seeeduino-Stalker-V3-1-p-2686.html">The arduino-based board : Seeeduino Stalker V3.1</a> (currently out of order in May 2022)
   <li><a href="https://wiki.seeedstudio.com/UartSBee_v5/">USB-UART converter</a> to communicate with the board, and some female-female jumpers.
-  <li>The sensor you want to plug in. In our case a water pressure sensor, <a href="sensor_waterpressure/">see other post here</a>
+  <li>The sensor you want to plug in. In our case a water pressure sensor, <a href="../sensor_waterpressure/">see other post here</a>
 </ul>
 <br>
 
@@ -38,7 +38,17 @@ Once everything is set-up, try to run the blink example to make sure everything 
 <br>
 Then download the <a href="scripts">arduino code</a>. You may need to download a few arduino libraries in the library manager (in Arduino IDE : Sketch -> Include Library -> Manage Library or Add .ZIP library), depending on the sensors you are connecting. In our example, we only need to search and download the "SparkFun_MS5803_I2C.h" library.
 
-
-
+<br>
+<br>
+<div align="center">
+  <table>
+      <tr>
+          <td><img src="images/station_glacier.jpg" width="600" /> </td>
+      </tr>
+      <tr>
+          <td style="text-align:center"><em>First version of the datalogger working in the glacier forefield of the Otemma catchment.</em></td>
+      </tr>
+  </table>
+</div>
 
 

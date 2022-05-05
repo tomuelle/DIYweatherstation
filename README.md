@@ -1,4 +1,12 @@
 # DIY automatic monitoring station
+## Contact and credit
+This tutorial was designed by Tom Müller, in the framework of a PhD thesis at the University of Lausanne (Switzerland) and was co-supervised by Bettina Schaefli (University of Bern, Switzerland) and Stuart Lane (University of Lausanne, Switzerland).
+
+The codes are Open-Source. For scientific reference, please use the following link : https://doi.org/10.5194/egusphere-egu22-940
+
+For any questions, please write to tom.muller1@gmail.com
+
+## Description
 
 This page provides different low-cost arduino based automatic datalogger solutions developed in the framework of my PhD work in a remote high alpine environment.
 It contains all necessary information for the replication of such solutions and should be accessible for non-expert users. The solutions proposed here are based on my own experience and I stress that I had no prior training in sensor development nor electronics.
@@ -23,7 +31,7 @@ We have tested and used three different development boards which are summarized 
 ### Seeeduino Stalker v3.1
 <img align="right" src="images/seeeduino.jpg" width="200"/>
 <p align="justify">
-<a href="https://wiki.seeedstudio.com/Seeeduino_Stalker_V3.1/">The Seeeduino Stalker v3.1</a> board contains all necessary features to build a simple local autonomious datalogger. It has a relatively low internal memory (Atmega328P) so that it should be used for small applications with only one or two sensors. It is the cheapest option but shows sometimes small bugs, although it is overall very satisfying. It is imported from the US and may be subject to supply limitation. You will need a <a href="https://wiki.seeedstudio.com/UartSBee_v5/">USB-UART converter</a> to communicate with the board.
+<a href="https://wiki.seeedstudio.com/Seeeduino_Stalker_V3.1/">The Seeeduino Stalker v3.1</a> board contains all necessary features to build a simple local autonomious datalogger. It has a relatively low internal memory (Atmega328P) so that it should be used for small applications with only one or two sensors. It is the cheapest option but shows sometimes small bugs, although it is overall very satisfying. It is imported from the US and may be subject to supply limitation.
   
 A description of a simple water table monitoring project is available in the <a href="/logger_standalone_seeed">logger standalone Seeed folder</a>.
 </p>
@@ -42,7 +50,5 @@ A description of a simple water table monitoring project is available in the <a 
 <p align="justify">
 <a href="https://heltec.org/product/htcc-ab01/">The CubeCell Lora</a> Dev-Board is a low-cost, low-power board specifically designed for LoRaWAN applications. This board does not have any SD card holder nor RTC clock and data are only sent using the built-in LoRa module. The data can only be retrieved using a LoRa gateway and are not saved on the device.
 
-For this LoRaWAN application, we developped a completely autonomous, solar-based, local wireless network for regions without internet (4G) connection which allows to retrieve data from mutliple LoRa stations. A similar solution using 4G is also shown. Details are accessible in the <a href="/LoRaWan_logger">LoRaWan_logger folder</a>.
+For this LoRaWAN application, we developped a completely autonomous, solar-based, local wireless network for regions without internet (4G) connection which allows to retrieve data from mutliple LoRa stations. A similar solution using 4G is also shown. Details are accessible in the <a href="/logger_LoRaWan">LoRaWan_logger folder</a>.
 </p>
-<br>
-
