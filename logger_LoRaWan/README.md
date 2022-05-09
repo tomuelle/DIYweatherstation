@@ -163,19 +163,17 @@ and :
 ```
   sudo systemctl reload telegraf.service
   sudo systemctl status telegraf.service
-
 ```
  <li>Finally, we can install <b>Grafana</b>, <a href="https://grafana.com/tutorials/install-grafana-on-raspberry-pi/">read here</a>. Just in case run :</li>
+ 
 ```
   sudo systemctl enable influxdb grafana-server telegraf
   sudo systemctl start influxdb grafana-server telegraf
 ```
-Now we can finally access Grafana, in your browser type : <i>http://ip_raspberry:3000</i>. Note that you will need to be connected to the same WiFi as your server. If you want to access the data remotely, you will need to use your public IP and <a href="https://pimylifeup.com/raspberry-pi-apache/">create a web server.</a> 
+
+Now we can finally access Grafana, in your browser type : <i>http://ip_raspberry:3000</i>, add configure it as in the picture below. The name of your database was defined in InfluxDB, and the user is the name to which you gave ALL PRIVILEGES. Note that you will need to be connected to the same WiFi as your server. If you want to access the data remotely, you will need to use your public IP and <a href="https://pimylifeup.com/raspberry-pi-apache/">create a web server.</a>  </li>
 <br>
-<br>
-  <div align="center">
+<br><div align="center">
     <img src="images/config_grafana.PNG" width="600"/>
-  </div>
- 
- </li>
- </ol>
+</div>
+</ol>
