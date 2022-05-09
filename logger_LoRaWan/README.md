@@ -85,18 +85,16 @@ This is the configuration if your antenna is connected to internet. In case, you
 ### Configuration of The Things Network
 In this part, we will see how to add your end-device (the Cubecell or Sodaq logger) to The Thing Network (TTN) to retrieve your data. LoRaWAN uses two different activation mode (the way the device connects to the gateway), called ABP or OTAA. In both cases, the LoRa signal sent by the end-device is encrypted and you will need to enter some device security keys in TTN and in your end-device configuration in order to recognize and read the data, this is called "activation". ABP is simpler but a bit less secure, the end-device will only send data ("blindly") to the gateway but does not receive information in return. OTAA is more secure and after each activation or data sent from the device, the gateway will send back some confirmation message to the device, this is obviously the best procedure, but my experience showed that it is sometimes difficult to receive the return confirmation if you're a bit far from the gateway. More detailed info <a href="https://www.thethingsindustries.com/docs/devices/abp-vs-otaa/">here</a>. Let's use OTAA activation in the next part.
 
-<img  align="right" src="images/TTN_config_device.PNG" width="300"/>
 <ol>
   <li>First go to the europe server of TTN and create an account : https://eu1.cloud.thethings.network/console/.</li>
   <li>Go to application -> +add application. In this application, you will be able to add mutliple end-devices.</li>
-  <li>Go to "Add end-device". </li>
-  <li></li>
-  <li></li>
+  <li>Go to "Add end-device", and find your device (in our case, we will just do the configuration manually, as in the picture below. You can generate the keys automatically, and then add them to your Arduino code (</li> <a href="scripts/cubecell_LORA_OTAA_rain_AHT20/ttnparams.h">here for example</a>).
+  <div align="center">
+    <img src="images/TTN_config_device.PNG" width="800"/>
+  </div>
+  <li>Create payload decoder</li>
+  <li>Create MQTT connection</li>
 </ol>
-
-Add end-device -> Copy keys
-Create payload decoder
-Create MQTT connection
 
 ## Server
 
