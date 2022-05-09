@@ -115,68 +115,67 @@ This server can be used locally without internet access. In this case, the serve
 ### Configuration of the Rapsberry pi
 I will not detail the whole process here, but will highlight the steps or tutorial which helped me get there. You will need to following functions :
 <ol>
-  <li>Install Rapbian OS. I usually do this without screen directly is SSH mode (see <a href="https://www.instructables.com/How-to-Setup-Raspberry-Pi-Without-Monitor-and-Keyb/">this tutorial</a>)</li>
-  <li>You may then want to configure the WIFI connection (to access internet or the local access point). <a href="https://binaryupdates.com/how-to-configure-wifi-on-raspberry-pi-4/">Read here</a></li>
-  <li>Update the Raspberry Pi. <a href="https://pimylifeup.com/raspberry-pi-update/">Read here</a></li>
+  <li>Install Rapbian OS. I usually do this without screen directly is SSH mode (see <a href="https://www.instructables.com/How-to-Setup-Raspberry-Pi-Without-Monitor-and-Keyb/">this tutorial</a>).</li>
+  <li>You may then want to configure the WIFI connection (to access internet or the local access point). <a href="https://binaryupdates.com/how-to-configure-wifi-on-raspberry-pi-4/">Read here</a>.</li>
+  <li>Update the Raspberry Pi. <a href="https://pimylifeup.com/raspberry-pi-update/">Read here</a>.</li>
 </ol>
-Then comes the main part, we will need a series of software which work together: <b>Mosquitto</b>, an MQTT broker which receives the data from TTN, <b>influxDB</b> to store the data, <b>telegraf</b> to transfer the data from Mosquitoo to the database and <b>Grafana</b> an application to vizualise the data and create queries. A few tutorials summarize the Influx, Telegraf, Grafana installation such as <a href="https://nwmichl.net/2020/07/14/telegraf-influxdb-grafana-on-raspberrypi-from-scratch/">this one</a>. The main steps are :   
+Then comes the main part, we will need a series of software which work together: <b>Mosquitto</b>, an MQTT broker which receives the data from TTN, <b>influxDB</b> to store the data, <b>telegraf</b> to transfer the data from Mosquitoo to the database and <b>Grafana</b> an application to vizualise the data and create queries. A few tutorials summarize the Influx, Telegraf, Grafana installation such as <a href="https://nwmichl.net/2020/07/14/telegraf-influxdb-grafana-on-raspberrypi-from-scratch/">this one</a>. 
+<br><br>
+The main steps are :
  <ol>
   <li>First, let install the MQTT broker <b>Mosquitto</b>, <a href="https://www.instructables.com/Installing-MQTT-BrokerMosquitto-on-Raspberry-Pi/">read here</a>.</li>
-  <li>Next, we will install <b>InfluxDB</b> (<a href="https://pimylifeup.com/raspberry-pi-influxdb/">read here</a>). This is an open-source database which is specifically designed to work fast for time series. Once installed, go on and create a database. Then add a user to allow editing of the database. In SSH command line type : <i>influx -execute "CREATE USER "telegraf" WITH PASSWORD '<your_password>' WITH ALL PRIVILEGES;"</i></li>
-  <li>Then install <b>Telegraf</b>, <a href="https://computingforgeeks.com/install-and-configure-telegraf-on-debian-linux/">read here</a>. Then, let's configure telegraf. Type in command line : <i>sudo nano /etc/telegraf/telegraf.conf</i>, and edit the following section :
+  <li>Next, we will install <b>InfluxDB</b> (<a href="https://pimylifeup.com/raspberry-pi-influxdb/">read here</a>). This is an open-source database which is specifically designed to work fast for time series. Once installed, go on and create a database. Then add a user to allow editing of the database. In SSH command line type :</li>
    
- <div align="center">
-  <table style="width:100%;text-align:left;background-color:gold;>
-      <tr>
-          <td>
-          [[inputs.mqtt_consumer]]
-          servers = ["tcp://localhost:1883"]
-          qos = 0
-          connection_timeout = "30s"
-          topics = [ "+/+/data" ]
-          client_id = ""
-          username = ""
-          password = ""
-          data_format = "json"
-         </td>
-      </tr>
-      <tr>
-          <td>
-         [[outputs.influxdb]]
-         urls = ["http://localhost:8086"]
-         database = "meteodb1"
-         retention_policy = ""
-         write_consistency = "any"
-         timeout = "5s"
-         username = "telegraf"
-         password = "qswd1234"
-      </td>
-      </tr>
-  </table>
-</div>
+``` 
+influx -execute "CREATE USER "telegraf" WITH PASSWORD '<your_password>' WITH ALL PRIVILEGES;"
+```
 
- 
- 
+  <li>Then install <b>Telegraf</b>, <a href="https://computingforgeeks.com/install-and-configure-telegraf-on-debian-linux/">read here</a>. Then, let's configure telegraf:</li>
+   
+``` 
+sudo nano /etc/telegraf/telegraf.conf
+```
+   
+and edit the following section : 
+```
+[[inputs.mqtt_consumer]]
+  servers = ["tcp://localhost:1883"]
+  qos = 0
+  connection_timeout = "30s"
+  topics = [ "+/+/data" ]
+  client_id = ""
+  username = ""
+  password = ""
+  data_format = "json"
+```
+and :
+```
+[[inputs.mqtt_consumer]]
+  servers = ["tcp://eu1.cloud.thethings.network:1883"]
+  qos = 0
+  connection_timeout = "30s"
+  topics = [ "v3/+/devices/+/up" ]
+  client_id = ""
+  username = "<check_in_TTN>"
+  password = "<check_in_TTN>"
+  data_format = "json"
+```
+```
+  sudo systemctl reload telegraf.service
+  sudo systemctl status telegraf.service
+
+```
+ <li>Finally, we can install <b>Grafana</b>, <a href="https://grafana.com/tutorials/install-grafana-on-raspberry-pi/">read here</a>. Just in case run :</li>
+```
+  sudo systemctl enable influxdb grafana-server telegraf
+  sudo systemctl start influxdb grafana-server telegraf
+```
+Now we can finally access Grafana, in your browser type : <i>http://ip_raspberry:3000</i>. Note that you will need to be connected to the same WiFi as your server. If you want to access the data remotely, you will need to use your public IP and <a href="https://pimylifeup.com/raspberry-pi-apache/">create a web server.</a> 
+<br>
+<br>
+  <div align="center">
+    <img src="images/config_grafana.PNG" width="600"/>
+  </div>
  
  </li>
-  <li>First, let install the MQTT broker <b>Mosquitto</b>, <a href="https://www.instructables.com/Installing-MQTT-BrokerMosquitto-on-Raspberry-Pi/">read here</a>.</li>
  </ol>
-
-   
-   
- https://nwmichl.net/2020/07/14/telegraf-influxdb-grafana-on-raspberrypi-from-scratch/
-   
- </li>
-  <li></li>
-</ol> 
-
-https://nwmichl.net/2020/07/14/telegraf-influxdb-grafana-on-raspberrypi-from-scratch/
-You will need to following functions :
- <ol>
-  <li>Mosquitto (MQTT)</li>
-  <li>influxDB</li>
-  <li>Telegraf</li>
-  <li>Grafana</li>
-</ol> 
-
-
