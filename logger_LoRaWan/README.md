@@ -11,7 +11,7 @@ The architecture of the system is composed of different blocks :
 
 <img src="images/loraWan.jpg" width="960"/>
 
-I also want to acknoledge the <a href="https://github.com/chrisys/mini-lora-weatherstation">following tutorial</a> which helped me get started ! 
+I also want to acknowledge the <a href="https://github.com/chrisys/mini-lora-weatherstation">following tutorial</a> which helped me get started ! 
 
 ## Arduino-based datalogger
 
