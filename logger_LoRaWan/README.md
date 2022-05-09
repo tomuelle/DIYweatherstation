@@ -81,8 +81,8 @@ We used an outdoor 4G <a href="https://www.dragino.com/products/lora-lorawan-gat
 <img src="images/config1_ttn.PNG" width="600"/>
 <img src="images/config2_ttn.PNG" width="600"/>
 </div>
-
-This is the configuration if your antenna is connected to internet. In case, you work in a remote area without 4G access, you can create a local LoRa network which works locally. Please write to me in case you need help (I will try to do a tutorial later).
+<br>
+This is the configuration if your antenna is connected to internet. In case, you work in a remote area without 4G access, you can create a local LoRa network which does not connect to The Things Network, but rather directly send the data to a local server (raspberry pi) using MQTT. In this case, you need to configure the gateway to work with the built-in ABP decoder to MQTT mode (in LoRaWAN configuration). Please write to me in case you need help (I will try to do a tutorial later).
 
 ### Configuration of The Things Network
 In this part, we will see how to add your end-device (the Cubecell or Sodaq logger) to The Thing Network (TTN) to retrieve your data. LoRaWAN uses two different activation mode (the way the device connects to the gateway), called ABP or OTAA. In both cases, the LoRa signal sent by the end-device is encrypted and you will need to enter some device security keys in TTN and in your end-device configuration in order to recognize and read the data, this is called "activation". ABP is simpler but a bit less secure, the end-device will only send data ("blindly") to the gateway but does not receive information in return. OTAA is more secure and after each activation or data sent from the device, the gateway will send back some confirmation message to the device, this is obviously the best procedure, but my experience showed that it is sometimes difficult to receive the return confirmation if you're a bit far from the gateway. More detailed info <a href="https://www.thethingsindustries.com/docs/devices/abp-vs-otaa/">here</a>. Let's use OTAA activation in the next part.
@@ -102,16 +102,36 @@ In this part, we will see how to add your end-device (the Cubecell or Sodaq logg
 </ol>
 
 ## Server
+In this last part, I propose to developp a server to store the data and provide an interface for vizualisation or queries using a Raspberry Pi.
+This server can be used locally without internet access. In this case, the server is connected to the local Access Point of the LoRa Gateway and data are sent using the built-in MQTT mode from the gateway. Alternatively, the server can be connected to internet and will then receive the data from TTN using the MQTT protocol. The  main configuration is similar in both cases.
 
-To come...
+#### Hardware required
+ <ul>
+  <li>Raspberry pi 3 model B (other model should work too)</li>
+  <li>16 GB SDHC card</li>
+</ul> 
 
-Create a server on Rapsberry pi !
-You will need to following functions :
+<a href="">Read here</a>
+### Configuration of the Rapsberry pi
+I will not detail the whole process here, but will highlight the steps or tutorial which helped me get there. You will need to following functions :
+<ol>
+  <li>Install Rapbian OS. I usually do this without screen directly is SSH mode (see <a href="https://www.instructables.com/How-to-Setup-Raspberry-Pi-Without-Monitor-and-Keyb/">this tutorial</a></li>
+  <li>You may then want to configure the WIFI connection (to access internet or the local access point). <a href="https://binaryupdates.com/how-to-configure-wifi-on-raspberry-pi-4/">Read here</a></li>
+  <li>Update the Raspberry Pi. <a href="https://pimylifeup.com/raspberry-pi-update/">Read here</a></li>
+</ol>
+Then comes the main part, we will need a series of software which work together: <b>Mosquitto</b>, an MQTT broker which receives the data from TTN, <b>influxDB</b> to store the data, <b>telegraf</b> to transfer the data from Mosquitoo to the database and <b>Grafana</b> an application to vizualise the data and create queries. A few tutorials summarize the Influx, Telegraf, Grafana installation such as <a href="https://nwmichl.net/2020/07/14/telegraf-influxdb-grafana-on-raspberrypi-from-scratch/">this one</a>.   
  <ol>
-  <li>(create hotspot)</li>
-  <li>Apache</li>
-  <li>PHP</li>
-  <li>public IP address</li>
+   <li>First we will install <b>InfluxDB</b> (<a href="https://pimylifeup.com/raspberry-pi-influxdb/">read here</a>). This is an open-source database which is specifically designed to work fast for time series. Once installed, go on and create a database. Then add a user to allow editing of the database. In SSH command type : <i>influx -execute "CREATE USER "telegraf" WITH PASSWORD '<your_password>' WITH ALL PRIVILEGES;"</i></li>
+  <li>Next we will install <b>InfluxDB</b> (<a href="https://pimylifeup.com/raspberry-pi-influxdb/">read here</a>). This is an open-source database which is specifically designed to work fast for time series. Once installed, go on and create a database. Then add a user to allow editing of the database. In SSH command type : <i>influx -execute "CREATE USER "telegraf" WITH PASSWORD '<your_password>' WITH ALL PRIVILEGES;"</i></li>
+  
+ </ol>
+
+   
+   
+ https://nwmichl.net/2020/07/14/telegraf-influxdb-grafana-on-raspberrypi-from-scratch/
+   
+ </li>
+  <li></li>
 </ol> 
 
 https://nwmichl.net/2020/07/14/telegraf-influxdb-grafana-on-raspberrypi-from-scratch/
