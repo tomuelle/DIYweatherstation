@@ -187,6 +187,4 @@ SELECT distinct("uplink_message_decoded_payload_temperature") FROM "mqtt_consume
 ## Final results
 You can find on <a href="https://fermedebassenges.ch/meteo/">this page</a> the final result from a simple weather station using the cubecell board !
  
-<iframe src="https://grafana.fermedebassenges.ch/grafana/d/7URrUzzRz/mytemp?orgId=1&amp;theme=dark&amp;refresh=5m&amp;kiosk=tv" width="1500" height="1500" frameborder="0"></iframe>
- 
 Good luck with this long tutorial !
