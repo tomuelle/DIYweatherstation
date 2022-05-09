@@ -177,3 +177,11 @@ Now we can finally access Grafana, in your browser type : <i>http://ip_raspberry
     <img src="images/config_grafana.PNG" width="600"/>
 </div>
 </ol>
+ 
+Finally, in Grafana, go to Dashboard, create a new dashboard (an empty pannel) and edit the query. For example, for my temperature data I use the following query ("cubecellapp@ttn" is the username in TTN MQTT and "cubecell1" is the end-device name in TTN) :
+ 
+```
+SELECT distinct("uplink_message_decoded_payload_temperature") FROM "mqtt_consumer" WHERE ("topic" = 'v3/cubecellapp@ttn/devices/cubecell1/up') AND $timeFilter GROUP BY time($__interval) fill(null)
+``` 
+ 
+Good luck with this long tutorial !
