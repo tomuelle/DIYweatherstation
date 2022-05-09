@@ -16,7 +16,7 @@ The architecture of the system is composed of different blocks :
 We tested two different dataloggers. The first one is a <a href="https://heltec.org/product/htcc-ab01/">CubeCell Lora</a> Dev-Board. The second is a <a href="https://support.sodaq.com/Boards/Mbili/">SODAQ Mbili</a> equipped with a <a href="https://shop.sodaq.com/lorabee-rn2483-order-now.html">LoRa bee-module</a>.
 
 ### Hardware required
-Links below are examples of hardware providers for Switzerland in 2022.
+Links below are examples of hardware providers for Switzerland in 2022. Cost : ~50 to 75 CHF + sensors cost.
 <ul>
   <li><a href="https://www.bastelgarage.ch/110x80x70mm-ip67-kunststoffgehause-transparent/">IP67 Outdoor Plastic Enclosure</a> 
   <li><a href="https://www.bastelgarage.ch/kabelverschraubung-m12-ip68/">Cable glands (M12 or M16)</a> 
@@ -47,7 +47,7 @@ For the CubeCell Lora Dev-Board:
   </table>
 </div>
 
-## Configuration
+### Configuration
 
 Firstly you will need to install the <a href="https://www.arduino.cc/en/software/">arduino IDE</a> and configure it to work with your board. For the Mbili you can check <a href="../logger_standalone_sodaq#configuration">this page</a>. For the CubeCell board, follow <a href="https://heltec-automation-docs.readthedocs.io/en/latest/cubecell/quick_start.html">this tutorial</a>.
 <br>
@@ -56,9 +56,30 @@ Then download the <a href="scripts">arduino code</a>. You may need to download a
 
 ## LoRaWan gateway
 
-To come...
+The LoRaWAN gateway is the base station which will receive and decode any Lora RF signal (from all your devices) and transmit it to a remote server. As the LoRa network is becoming the main solution for the internet of Things (IoT), many gateways are beeing installed in urban areas. <a href="https://www.thethingsnetwork.org/">The Things Network (TTN)</a> is a global collaborative IoT ecosystem which allows to create an open network of LoRaWAN gateways on which you can freely rely. If your project is located inside the range of an existing gateway connected to TTN, you will be able to retrieve the data without the need to install your own gateway. In remote locations tough, you will need your own gateway.
+If you don't need to set-up your own gateway, you can skip the next part !
 
-Dragino gateway (https://www.dragino.com/products/lora-lorawan-gateway/item/160-dlos8.html)
+### Installing your own LoRaWAN gateway
+#### Hardware required
+Links below are examples of hardware providers for Switzerland in 2022. Cost : ~600 CHF
+<ul>
+  <li><a href="https://www.bastelgarage.ch/dlos8-4g-version-outdoor-multichannel-lorawan-gateway?search=dl">Dragino gateway</a> 
+  <li><a href="https://www.swiss-green.ch/fr/batteries-solaires-agm-batterie-solaire-agm/39110300-batterie-solaire-agm-22-ah.html">12V Battery ~20 Ah</a> 
+  <li><a href="https://www.swiss-green.ch/fr/panneaux-solaires-polycristallins-panneau-solaire/39292055-panneau-solaire-polycristallin-45-w.html">Solar panel ~45W</a>
+  <li><a href="https://www.swiss-green.ch/fr/regulateurs-charge-solaire-pwm-regulateurs-charge-solaires-pwm/39145100-regulateur-solaire-pwm-led-05-a-usb.html">Solar charge controler</a>
+  <li><a href="https://www.swiss-green.ch/fr/3104-cables-solaire-pour-panneaux-photovoltaiques">Connection cables</a>
+  <li><a href="https://www.bastelgarage.ch/kabelverschraubung-m12-ip68/">Cable glands (M16)</a> 
+  <li><a href="https://de.vidaxl.ch/e/vidaxl-gefahrgutkoffer-schwarz-406x33x174-cm/8718475978503.html">A waterproof box (we use a pelican case in the field)</a>
+</ul>
+
+#### Configuration of the gateway
+We used an outdoor 4G <a href="https://www.dragino.com/products/lora-lorawan-gateway/item/160-dlos8.html">Dragino gateway</a>. The configuration is detailed in <a href="https://www.dragino.com/downloads/index.php?dir=LoRa_Gateway/DLOS8/">the manual</a>. But here are the main steps:
+
+Once the antenna is powered, it should create a WIFI access point to which you can connect in your wifi settings and access the settings using the IP : "10.130.1.1". User Name: root, Password: dragino. 
+
+
+
+### Configuration of The Things Network
 
 Account on TheThingsNetwork : https://eu1.cloud.thethings.network/console/
 Add end-device -> Copy keys
