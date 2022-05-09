@@ -75,9 +75,10 @@ Links below are examples of hardware providers for Switzerland in 2022. Cost : ~
 #### Configuration of the gateway
 We used an outdoor 4G <a href="https://www.dragino.com/products/lora-lorawan-gateway/item/160-dlos8.html">Dragino gateway</a>. The configuration is detailed in <a href="https://www.dragino.com/downloads/index.php?dir=LoRa_Gateway/DLOS8/">the manual</a>, but here are the main steps. Once the antenna is powered, it should create a WIFI access point to which you can connect in your wifi settings and access the settings using the IP : "10.130.1.1". User Name: root, Password: dragino. You should then configure the LoRa configuration and LoRaWAN configuration (see image below). That's all ! Check in the home page that everything seems to work.
 
-
-
-
+<div align="center">
+<img src="images/conf1_ttn.PNG" width="600"/>
+<img src="images/conf2_ttn.PNG" width="600"/>
+</div>
 ### Configuration of The Things Network
 
 Account on TheThingsNetwork : https://eu1.cloud.thethings.network/console/
