@@ -111,7 +111,6 @@ This server can be used locally without internet access. In this case, the serve
   <li>16 GB SDHC card</li>
 </ul> 
 
-<a href="">Read here</a>
 ### Configuration of the Rapsberry pi
 I will not detail the whole process here, but will highlight the steps or tutorial which helped me get there. You will need to following functions :
 <ol>
