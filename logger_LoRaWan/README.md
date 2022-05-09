@@ -91,11 +91,14 @@ In this part, we will see how to add your end-device (the Cubecell or Sodaq logg
   <li>First go to the europe server of TTN and create an account : https://eu1.cloud.thethings.network/console/.</li>
   <li>Go to application -> +add application. In this application, you will be able to add mutliple end-devices.</li>
   <li>Go to "Add end-device", and find your device (in our case, we will just do the configuration manually, as in the picture below. You can generate the keys automatically, and then add them to your Arduino code (<a href="scripts/cubecell_LORA_OTAA_rain_AHT20/ttnparams.h">here for example</a>). Once done, your device should be able to connect to TTN if a gateway is in the range. You should see some activity in the main "Overview" tab of your end-device.
+   
+<br>
+<br>
   <div align="center">
     <img src="images/TTN_config_device.PNG" width="800"/>
   </div>
   <li>Finally, we will need to decode the data sent in bytes to actual numbers. This is done in Application -> payload formatter -> Uplink. Here you will need to check how you coded those information in your arduino code. Using <a href="scripts/cubecell_LORA_OTAA_rain_AHT20/cubecell_LORA_OTAA_rain_AHT20.ino">this example</a>, we will decode the temperature, humditiy, pressure sensors as well as rain and battery state. We will use a "Custom javascript formatter" such as <a href="scripts/payload_javascript.txt">this one</a>. Now in the end-dice Live Data tab you should see your decoded payload !</li>  
-  <li>Finally, now that we can read the data, we need to store them on a remote server. There are mutliple way achieve this. If you want to store your data online, one easy way is to use "The Thing Speak", following <a href="https://www.thethingsindustries.com/docs/integrations/cloud-integrations/thingspeak/">this tutorial</a>. Another possibility is to have your own web server. This last part is for more advanced users and is described in the next part. The main idea is to communicate between TTN and your server (in our case a Raspberry pi) using MQTT. In TTN, go to "Application -> Integrations -> MQTT" and write down the "Connection information".</li>
+  <li>Finally, now that we can read the data, we need to store them on a remote server. There are mutliple ways achieve this. If you want to store your data online, one easy way is to use "The Thing Speak", following <a href="https://www.thethingsindustries.com/docs/integrations/cloud-integrations/thingspeak/">this tutorial</a>. Another possibility is to have your own web server. This last part is for more advanced users and is described in the next part. The main idea is to communicate between TTN and your server (in our case a Raspberry pi) using MQTT. In TTN, go to "Application -> Integrations -> MQTT" and write down the "Connection information".</li>
 </ol>
 
 ## Server
