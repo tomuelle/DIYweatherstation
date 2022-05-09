@@ -105,7 +105,7 @@ In this part, we will see how to add your end-device (the Cubecell or Sodaq logg
 In this last part, I propose to developp a server to store the data and provide an interface for vizualisation or queries using a Raspberry Pi.
 This server can be used locally without internet access. In this case, the server is connected to the local Access Point of the LoRa Gateway and data are sent using the built-in MQTT mode from the gateway. Alternatively, the server can be connected to internet and will then receive the data from TTN using the MQTT protocol. The  main configuration is similar in both cases.
 
-#### Hardware required
+### Hardware required
  <ul>
   <li>Raspberry pi 3 model B (other model should work too)</li>
   <li>16 GB SDHC card</li>
@@ -115,15 +115,51 @@ This server can be used locally without internet access. In this case, the serve
 ### Configuration of the Rapsberry pi
 I will not detail the whole process here, but will highlight the steps or tutorial which helped me get there. You will need to following functions :
 <ol>
-  <li>Install Rapbian OS. I usually do this without screen directly is SSH mode (see <a href="https://www.instructables.com/How-to-Setup-Raspberry-Pi-Without-Monitor-and-Keyb/">this tutorial</a></li>
+  <li>Install Rapbian OS. I usually do this without screen directly is SSH mode (see <a href="https://www.instructables.com/How-to-Setup-Raspberry-Pi-Without-Monitor-and-Keyb/">this tutorial</a>)</li>
   <li>You may then want to configure the WIFI connection (to access internet or the local access point). <a href="https://binaryupdates.com/how-to-configure-wifi-on-raspberry-pi-4/">Read here</a></li>
   <li>Update the Raspberry Pi. <a href="https://pimylifeup.com/raspberry-pi-update/">Read here</a></li>
 </ol>
-Then comes the main part, we will need a series of software which work together: <b>Mosquitto</b>, an MQTT broker which receives the data from TTN, <b>influxDB</b> to store the data, <b>telegraf</b> to transfer the data from Mosquitoo to the database and <b>Grafana</b> an application to vizualise the data and create queries. A few tutorials summarize the Influx, Telegraf, Grafana installation such as <a href="https://nwmichl.net/2020/07/14/telegraf-influxdb-grafana-on-raspberrypi-from-scratch/">this one</a>.   
+Then comes the main part, we will need a series of software which work together: <b>Mosquitto</b>, an MQTT broker which receives the data from TTN, <b>influxDB</b> to store the data, <b>telegraf</b> to transfer the data from Mosquitoo to the database and <b>Grafana</b> an application to vizualise the data and create queries. A few tutorials summarize the Influx, Telegraf, Grafana installation such as <a href="https://nwmichl.net/2020/07/14/telegraf-influxdb-grafana-on-raspberrypi-from-scratch/">this one</a>. The main steps are :   
  <ol>
-   <li>First we will install <b>InfluxDB</b> (<a href="https://pimylifeup.com/raspberry-pi-influxdb/">read here</a>). This is an open-source database which is specifically designed to work fast for time series. Once installed, go on and create a database. Then add a user to allow editing of the database. In SSH command type : <i>influx -execute "CREATE USER "telegraf" WITH PASSWORD '<your_password>' WITH ALL PRIVILEGES;"</i></li>
-  <li>Next we will install <b>InfluxDB</b> (<a href="https://pimylifeup.com/raspberry-pi-influxdb/">read here</a>). This is an open-source database which is specifically designed to work fast for time series. Once installed, go on and create a database. Then add a user to allow editing of the database. In SSH command type : <i>influx -execute "CREATE USER "telegraf" WITH PASSWORD '<your_password>' WITH ALL PRIVILEGES;"</i></li>
-  
+  <li>First, let install the MQTT broker <b>Mosquitto</b>, <a href="https://www.instructables.com/Installing-MQTT-BrokerMosquitto-on-Raspberry-Pi/">read here</a>.</li>
+  <li>Next, we will install <b>InfluxDB</b> (<a href="https://pimylifeup.com/raspberry-pi-influxdb/">read here</a>). This is an open-source database which is specifically designed to work fast for time series. Once installed, go on and create a database. Then add a user to allow editing of the database. In SSH command line type : <i>influx -execute "CREATE USER "telegraf" WITH PASSWORD '<your_password>' WITH ALL PRIVILEGES;"</i></li>
+  <li>Then install <b>Telegraf</b>, <a href="https://computingforgeeks.com/install-and-configure-telegraf-on-debian-linux/">read here</a>. Then, let's configure telegraf. Type in command line : <i>sudo nano /etc/telegraf/telegraf.conf</i>, and edit the following section :
+   
+ <div align="center">
+  <table style="width:100%;text-align:left;background-color:gold;>
+      <tr>
+          <td>
+          [[inputs.mqtt_consumer]]
+          servers = ["tcp://localhost:1883"]
+          qos = 0
+          connection_timeout = "30s"
+          topics = [ "+/+/data" ]
+          client_id = ""
+          username = ""
+          password = ""
+          data_format = "json"
+         </td>
+      </tr>
+      <tr>
+          <td>
+         [[outputs.influxdb]]
+         urls = ["http://localhost:8086"]
+         database = "meteodb1"
+         retention_policy = ""
+         write_consistency = "any"
+         timeout = "5s"
+         username = "telegraf"
+         password = "qswd1234"
+      </td>
+      </tr>
+  </table>
+</div>
+
+ 
+ 
+ 
+ </li>
+  <li>First, let install the MQTT broker <b>Mosquitto</b>, <a href="https://www.instructables.com/Installing-MQTT-BrokerMosquitto-on-Raspberry-Pi/">read here</a>.</li>
  </ol>
 
    
