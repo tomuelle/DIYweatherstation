@@ -57,7 +57,7 @@ Then download the <a href="scripts">arduino code</a>. You may need to download a
 ## LoRaWan gateway
 
 The LoRaWAN gateway is the base station which will receive and decode any Lora RF signal (from all your devices) and transmit it to a remote server. As the LoRa network is becoming the main solution for the internet of Things (IoT), many gateways are beeing installed in urban areas. <a href="https://www.thethingsnetwork.org/">The Things Network (TTN)</a> is a global collaborative IoT ecosystem which allows to create an open network of LoRaWAN gateways on which you can freely rely. If your project is located inside the range of an existing gateway connected to TTN, you will be able to retrieve the data without the need to install your own gateway. In remote locations tough, you will need your own gateway.
-If you don't need to set-up your own gateway, you can skip the next part !
+If you don't need to set-up your own gateway, you can skip the next part and go to "Configuration of The Things Network"
 
 ### Installing your own LoRaWAN gateway
 #### Hardware required
@@ -76,12 +76,27 @@ Links below are examples of hardware providers for Switzerland in 2022. Cost : ~
 We used an outdoor 4G <a href="https://www.dragino.com/products/lora-lorawan-gateway/item/160-dlos8.html">Dragino gateway</a>. The configuration is detailed in <a href="https://www.dragino.com/downloads/index.php?dir=LoRa_Gateway/DLOS8/">the manual</a>, but here are the main steps. Once the antenna is powered, it should create a WIFI access point to which you can connect in your wifi settings and access the settings using the IP : "10.130.1.1". User Name: root, Password: dragino. You should then configure the LoRa configuration and LoRaWAN configuration (see image below). That's all ! Check in the home page that everything seems to work.
 
 <div align="center">
-<img src="images/conf1_ttn.PNG" width="600"/>
-<img src="images/conf2_ttn.PNG" width="600"/>
+<img src="images/config1_ttn.PNG" width="600"/>
+<img src="images/config2_ttn.PNG" width="600"/>
 </div>
-### Configuration of The Things Network
 
-Account on TheThingsNetwork : https://eu1.cloud.thethings.network/console/
+This is the configuration if your antenna is connected to internet. In case, you work in a remote area without 4G access, you can create a local LoRa network which works locally. Please write to me in case you need help (I will try to do a tutorial later).
+
+### Configuration of The Things Network
+In this part, we will see how to add your end-device (the Cubecell or Sodaq logger) to The Thing Network (TTN) to retrieve your data. LoRaWAN uses two different activation mode (the way the device connects to the gateway), called ABP or OTAA. In both cases, the LoRa signal sent by the end-device is encrypted and you will need to enter some device security keys in TTN and in your end-device configuration in order to recognize and read the data, this is called "activation". ABP is simpler but a bit less secure, the end-device will only send data ("blindly") to the gateway but does not receive information in return. OTAA is more secure and after each activation or data sent from the device, the gateway will send back some confirmation message to the device, this is obviously the best procedure, but my experience showed that it is sometimes difficult to receive the return confirmation if you're a bit far from the gateway. More detailed info <a href="https://www.thethingsindustries.com/docs/devices/abp-vs-otaa/">here</a>. Let's use OTAA activation in the next part.
+
+<div align="center">
+<img src="images/TTN_config1.PNG" width="200"/>
+</div>
+
+<ol>
+  <li>First go to the europe server of TTN and create an account : https://eu1.cloud.thethings.network/console/.</li>
+  <li>Go to application -> +add application. In this application, you will be able to add mutliple end-devices.</li>
+  <li>Go to "Add end-device". </li>
+  <li></li>
+  <li></li>
+</ol>
+
 Add end-device -> Copy keys
 Create payload decoder
 Create MQTT connection
