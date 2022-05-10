@@ -24,7 +24,7 @@ Links below are examples of hardware providers for Switzerland in 2022. Cost : ~
   <li><a href="https://www.bastelgarage.ch/kabelverschraubung-m12-ip68/">Cable glands (M12 or M16)</a> 
   <li><a href="https://shop.sodaq.com/lithium-ion-polymer-battery-25-ah.html"> 3.7V 2500mAh LiPo battery (with 2 mm JST connector)</a>   
   <li><a href="https://shop.sodaq.com/05w-solar-panel.html">0.5W Solar Panel 55x70mm (with 2 mm JST connector)</a>  
-  <li>The sensor you want to plug in. In our case, a typical (<a href="../sensor_rain/">Tipping Bucket Rain Gauge</a>) and an air temperature/humidity/pressure protected by a simple radiation shield (<a href="../sensor_temperature/">see post here</a>).
+  <li>The sensor you want to plug in. In our case, a typical Tipping Bucket Rain Gauge (<a href="../sensor_rain/">see post here</a>) and an air temperature/humidity/pressure protected by a simple radiation shield (<a href="../sensor_temperature/">see post here</a>).
   </ul> 
 For the SODAQ Mbili: 
 <ul>
