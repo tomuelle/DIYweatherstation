@@ -201,5 +201,7 @@ Good luck with this long tutorial !
  
 <br>
   <div align="center">
+    <a href="https://fermedebassenges.ch/meteo/">
     <img src="images/server_weather.PNG" width="700"/>
+    </a>
   </div>
