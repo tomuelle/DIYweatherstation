@@ -38,8 +38,14 @@ For the CubeCell Lora Dev-Board:
   <li><a href="https://heltec.org/product/htcc-ab01/">CubeCell board</a> 
   <li>Any USB-Micro (B) cable for communication
 </ul>
-<br>
 
+### Configuration
+
+Firstly you will need to install the <a href="https://www.arduino.cc/en/software/">arduino IDE</a> and configure it to work with your board. For the Mbili you can check <a href="../logger_standalone_sodaq#configuration">this page</a>. For the CubeCell board, follow <a href="https://heltec-automation-docs.readthedocs.io/en/latest/cubecell/quick_start.html">this tutorial</a>.
+<br>
+<br>
+Then download the <a href="scripts">arduino code</a>. You may need to download a few arduino libraries in the library manager (in Arduino IDE : Sketch -> Include Library -> Manage Library or Add .ZIP library), depending on the sensors you are connecting.
+<br><br>
 <div align="center">
   <table>
       <tr>
@@ -48,13 +54,6 @@ For the CubeCell Lora Dev-Board:
       </tr>
   </table>
 </div>
-
-### Configuration
-
-Firstly you will need to install the <a href="https://www.arduino.cc/en/software/">arduino IDE</a> and configure it to work with your board. For the Mbili you can check <a href="../logger_standalone_sodaq#configuration">this page</a>. For the CubeCell board, follow <a href="https://heltec-automation-docs.readthedocs.io/en/latest/cubecell/quick_start.html">this tutorial</a>.
-<br>
-<br>
-Then download the <a href="scripts">arduino code</a>. You may need to download a few arduino libraries in the library manager (in Arduino IDE : Sketch -> Include Library -> Manage Library or Add .ZIP library), depending on the sensors you are connecting.
 
 ## LoRaWan gateway
 
@@ -83,6 +82,17 @@ We used an outdoor 4G <a href="https://www.dragino.com/products/lora-lorawan-gat
 </div>
 <br>
 This is the configuration if your antenna is connected to internet. In case, you work in a remote area without 4G access, you can create a local LoRa network which does not connect to The Things Network, but rather directly send the data to a local server (raspberry pi) using MQTT. In this case, you need to configure the gateway to work with the built-in ABP decoder to MQTT mode (in LoRaWAN configuration). Please write to me in case you need help (I will try to do a tutorial later).
+<br><br>
+<div align="center">
+  <table>
+      <tr>
+          <td><img src="images/lora_gateway.jpg" width="600" /> </td>
+      </tr>
+      <tr>
+          <td style="text-align:center"><em>The LoRaWAN Gateway (Dragino DLOS8) equipped with a solar system and a raspberry pi to create a local LoRa network in the glacier forefield on the Otemma glacier (Switzerland).</em></td>
+      </tr>
+  </table>
+</div>
 
 ### Configuration of The Things Network
 In this part, we will see how to add your end-device (the Cubecell or Sodaq logger) to The Thing Network (TTN) to retrieve your data. LoRaWAN uses two different activation mode (the way the device connects to the gateway), called ABP or OTAA. In both cases, the LoRa signal sent by the end-device is encrypted and you will need to enter some device security keys in TTN and in your end-device configuration in order to recognize and read the data, this is called "activation". ABP is simpler but a bit less secure, the end-device will only send data ("blindly") to the gateway but does not receive information in return. OTAA is more secure and after each activation or data sent from the device, the gateway will send back some confirmation message to the device, this is obviously the best procedure, but my experience showed that it is sometimes difficult to receive the return confirmation if you're a bit far from the gateway. More detailed info <a href="https://www.thethingsindustries.com/docs/devices/abp-vs-otaa/">here</a>. Let's use OTAA activation in the next part.
@@ -188,3 +198,9 @@ SELECT distinct("uplink_message_decoded_payload_temperature") FROM "mqtt_consume
 You can find on <a href="https://fermedebassenges.ch/meteo/">this page</a> the final result from a simple weather station using the cubecell board !
  
 Good luck with this long tutorial !
+
+<br>
+<br>
+  <div align="center">
+    <img src="images/server_weather.PNG" width="700"/>
+  </div>
