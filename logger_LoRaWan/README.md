@@ -159,6 +159,7 @@ and :
   password = "<check_in_TTN>"
   data_format = "json"
 ```
+Then save and exit. Run the lines below to check that it is working. 
 ```
   sudo systemctl reload telegraf.service
   sudo systemctl status telegraf.service
